@@ -1,0 +1,33 @@
+@import "../base/variables";
+
+.tag{
+  border-radius: 6px;
+  padding: 6px 15px;
+  color: $white;
+  font-family: NotoSans;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: .3px;
+  &-SMM{
+    background-color: $turquoise;
+  }
+  &-Marketing{
+    background-color: $pink;
+  }
+  &-Web{
+    background-color: $light-green;
+  }
+  &-Design{
+    background-color: $purple;
+  }
+  &-Mobile{
+    background-color: $pink;
+  }
+  &-ProjectManager &-ProductManager &-EventManager{
+    background-color: $orange; //? посмотреть в апи какие слова на месте "Project и тд Manager" приходят и поменять название класса если надо
+  }
+  &-C-level{
+    background-color: $red;
+  }
+}

@@ -39,16 +39,23 @@ module.exports = ({ mode }) => {
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
             'postcss-loader',
+            'resolve-url-loader',
             'sass-loader',
           ],
         },
         {
           test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
-          type: isProduction ? 'asset/resource' : 'asset',
+          type:'asset/resource',
+          generator: {
+            filename: 'assets/img/[hash][ext][query]'
+          }
         },
         {
-          test: /\.(woff2?|eot|ttf|otf)$/i,
-          type: 'asset/resource',
+          test: /\.(ttf|eot|woff|woff2)$/,
+          type:'asset/resource',
+          generator: {
+            filename: 'assets/fonts/[name][ext][query]'
+          }
         },
         {
           test: /\.jsx?$/,
@@ -63,15 +70,16 @@ module.exports = ({ mode }) => {
       ],
     },
     resolve: {
-      extensions: ['.js', '.jsx'], // добавляем расширения файлов для импорта
+      extensions: ['.js', '.jsx',], 
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
       alias: {
         '@components': path.resolve(__dirname, 'src/components'),
         '@hooks': path.resolve(__dirname, 'src/hooks'),
         '@helpers': path.resolve(__dirname, 'src/helpers'),
-        '@pages': path.resolve(__dirname, 'src/pages')
+        '@pages': path.resolve(__dirname, 'src/pages'),
+        '@style': path.resolve(__dirname, 'src/scss'),
+        src: path.resolve(__dirname, "src"),
     }, 
-      // указываем папку с исходными файлами и папку node_modules
     },
   };
 };

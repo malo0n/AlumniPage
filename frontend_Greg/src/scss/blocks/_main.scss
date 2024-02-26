@@ -1,0 +1,14 @@
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  :first-child{
+    align-self: self-end;
+  }
+  margin: 38px auto;
+  width: 994px;
+  height: 1427px;
+  background-color: $background;
+}

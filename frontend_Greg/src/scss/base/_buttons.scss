@@ -1,0 +1,25 @@
+@import "./variables";
+.button{
+  background-color: $black;
+  border: none;
+  width: 100%;
+  color:$white;
+  cursor: pointer;
+  &_icon-back{
+    margin-right: 31px;
+  }
+  &-back{
+    padding: 8px 26px;
+    border-radius: 8px;
+    background-color: $black-main;
+    width: 240px;
+  }
+  &_text{
+    font-family: "Open Sans SemiBold", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: .5px;
+    line-height: 16px;
+    text-align: center;
+  }
+}
