@@ -3,7 +3,7 @@
   width: fit-content;
   padding: 6px 15px;
   color: $white;
-  font-family: "NotoSans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 12px;
   line-height: 130%;
@@ -33,9 +33,8 @@
 @media (max-width: 594px){
   .tag{
     border-radius: 3px;
-    padding: 2.7px 6.7px;
+    padding: 3px 7px;
     font-size: 5px;
     line-height: 133%;
-    text-align: center;
   }
 }

@@ -11,6 +11,7 @@
     &_info{
       display: flex;
       flex-direction: column;
+      font-family: "Noto Sans";
       &__tags{
         display: flex;
         flex-wrap: wrap;
@@ -18,14 +19,12 @@
         margin-bottom: 16px;
       }
       &__name{
-        font-family: "NotoSansBold";
         font-weight: 700;
         font-size: 40px;
         line-height: 115%;
         color: $black-main;
       }
       &__date{
-        font-family: "NotoSans";
         font-weight: 400;
         font-size: 18px;
         line-height: 111%;
@@ -49,13 +48,12 @@
     gap: 6px;
     align-items:start;
     &_info{
-      font-family: "NotoSansMedium";
+      font-family: "Noto Sans";
       font-weight: 500;
       font-size: 18px;
       line-height: 111%;
       color: $grey;
       .data-text{
-        font-family: "NotoSansMedium";
         font-weight: 500;
         font-size: 18px;
         line-height: 111%;

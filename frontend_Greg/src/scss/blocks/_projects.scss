@@ -21,19 +21,19 @@
   flex-direction: column;
   &__titles{
     margin-left: 30px;
+    font-family: "Noto Sans";
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 264px;
     height: 122px;
     &_status{
-      font-family: "Montserrat";
+      font-family: Montserrat, sans-serif;
       font-weight: 600;
       font-size: 12px;
       line-height: 100%;
     }
     &_role{
-      font-family: "Noto Sans";
       font-weight: 500;
       font-size: 18px;
       line-height: 111%;
@@ -48,11 +48,11 @@
     &_name{
       margin-top: 4px;
       margin-bottom: 10px;
-      font-family: "Montserrat";
+      font-family: Montserrat, sans-serif;
       font-weight: 600;
       font-size: 24px;
       line-height: 117%;
-      color: #000;
+      color: $black;
     }
   }
   &__info{

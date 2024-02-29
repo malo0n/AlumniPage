@@ -7,7 +7,6 @@ a{
   align-items: center;
   justify-content: center;
   gap: 31px;
-  background-color: $black;
   border: none;
   width: 100%;
   color:$white;
@@ -16,19 +15,23 @@ a{
   border-radius: 8px;
   background-color: $black-main;
   &-back{
-    width: 240px;
+    width: 251px;
   }
   &-forward{
     width: 100%;
     flex-direction: row-reverse;
+    .button_text{
+      line-height: 150%;
+    }
   }
   &_text{
-    font-family: "Open Sans SemiBold", sans-serif;
-    font-weight: 400;
-    font-size: 11px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
     letter-spacing: .5px;
-    line-height: 16px;
+    line-height: 133%;
     text-align: center;
+    align-self: center;
   }
 }
 @media (max-width: 594px){
@@ -44,11 +47,8 @@ a{
       flex-direction: row-reverse;
     }
     &_text{
-      font-family: "Open Sans SemiBold", sans-serif;
-      font-weight: 400;
       font-size: 5px;
       line-height: 7px;
-      text-align: center;
       letter-spacing: .1px;
     }
     &_icon{

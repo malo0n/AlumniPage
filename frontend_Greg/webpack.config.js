@@ -27,7 +27,7 @@ module.exports = ({ mode }) => {
         filename: isProduction ? '[name].[contenthash].css' : '[name].css',
       }),
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './src/pages/index.html',
       }),
       isProduction ? null : new ReactRefreshWebpackPlugin(),
     ].filter(Boolean),
@@ -48,13 +48,6 @@ module.exports = ({ mode }) => {
           type:'asset/resource',
           generator: {
             filename: 'assets/img/[hash][ext][query]'
-          }
-        },
-        {
-          test: /\.(ttf|eot|woff|woff2)$/,
-          type:'asset/resource',
-          generator: {
-            filename: 'assets/fonts/[name][ext][query]'
           }
         },
         {
