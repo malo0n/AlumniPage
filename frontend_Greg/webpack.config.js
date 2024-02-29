@@ -20,6 +20,7 @@ module.exports = ({ mode }) => {
     devServer: {
       static: './dist',
       hot: true,
+      port: 3000,
     },
     plugins: [
       new MiniCssExtractPlugin({
@@ -38,7 +39,6 @@ module.exports = ({ mode }) => {
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
-            'postcss-loader',
             'resolve-url-loader',
             'sass-loader',
           ],

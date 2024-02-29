@@ -1,0 +1,42 @@
+.skills{
+  width: 100%;
+  &__container{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .skill{
+      border-radius: 7px;
+      padding: 2px 19px;
+      width: fit-content;
+      height: auto;
+      background-color: $white;
+      text-align: center;
+      font-family:"Noto sans";
+      font-weight: 400;
+      line-height: 150%;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      color: $black-main;
+      
+    }
+  }
+}
+
+@media (max-width: 594px){
+  .skills{
+    &__container{
+      margin-top: 14px;
+      gap: 7px;
+      .skill{
+        border-radius: 3px;
+        padding: 0 8px;
+        height: auto;
+        font-size: 7px;
+        
+      }
+    }
+  }
+}

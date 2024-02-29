@@ -1,14 +1,27 @@
-
 .main{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  :first-child{
+  & > .link-back{
     align-self: self-end;
   }
   margin: 38px auto;
   width: 994px;
-  height: 1427px;
   background-color: $background;
+}
+@media (max-width: 1030px){
+  .main{
+    width: 594px;
+    & > .link-back{
+      align-self: self-start;
+    }
+  }
+}
+@media (max-width: 594px){
+  .main{
+    width: 267px;
+    margin-top: 17px;
+    
+  }
 }

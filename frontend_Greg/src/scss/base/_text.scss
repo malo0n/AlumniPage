@@ -1,0 +1,14 @@
+.title{
+  font-family: "Noto Sans";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 110%;
+  color: $black;
+}
+@media(max-width: 594px){
+  .title{
+    font-size: 17px;
+    line-height: 110%;
+    color: $black;
+  }
+}

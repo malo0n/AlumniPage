@@ -1,18 +1,26 @@
 @import "./variables";
+a{
+  text-decoration: none;
+}
 .button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 31px;
   background-color: $black;
   border: none;
   width: 100%;
   color:$white;
   cursor: pointer;
-  &_icon-back{
-    margin-right: 31px;
-  }
+  padding: 8px 26px;
+  border-radius: 8px;
+  background-color: $black-main;
   &-back{
-    padding: 8px 26px;
-    border-radius: 8px;
-    background-color: $black-main;
     width: 240px;
+  }
+  &-forward{
+    width: 100%;
+    flex-direction: row-reverse;
   }
   &_text{
     font-family: "Open Sans SemiBold", sans-serif;
@@ -21,5 +29,30 @@
     letter-spacing: .5px;
     line-height: 16px;
     text-align: center;
+  }
+}
+@media (max-width: 594px){
+  .button{
+    gap: 13px;
+    padding: 3.6px 11.69px;
+    border-radius: 3.6px;
+    &-back{
+      width: 109px;
+    }
+    &-forward{
+      width: 100%;
+      flex-direction: row-reverse;
+    }
+    &_text{
+      font-family: "Open Sans SemiBold", sans-serif;
+      font-weight: 400;
+      font-size: 5px;
+      line-height: 7px;
+      text-align: center;
+      letter-spacing: .1px;
+    }
+    &_icon{
+      width: 15px;
+    }
   }
 }
