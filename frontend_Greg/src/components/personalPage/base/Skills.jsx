@@ -1,9 +1,9 @@
 export function Skills({data}){
   const dataFormat = data.skills.split(", ");
-  if (dataFormat!='') {
-    return dataFormat.map((el)=>{
+  if (dataFormat!=='') {
+    return dataFormat.map((el,index)=>{
       return(
-        <div key={dataFormat.indexOf(el)} className={`skill`}>
+        <div key={index} className={`skill`}>
           {el}
         </div>
       )

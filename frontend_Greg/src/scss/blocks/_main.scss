@@ -7,20 +7,25 @@
     align-self: self-end;
   }
   margin: 38px auto;
-  width: 994px;
+  width: 1088px;
+  padding: 0 44px;
   background-color: $background;
+}
+@media (max-width: 1088px){
+  .main{
+    width: 100%;
+  }
 }
 @media (max-width: 1030px){
   .main{
-    width: 594px;
     & > .link-back{
       align-self: self-start;
     }
   }
 }
-@media (max-width: 594px){
+@media (max-width: 482px){
   .main{
-    width: 267px;
+    padding: 0 25px;
     margin-top: 17px;
     
   }

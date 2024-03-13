@@ -2,9 +2,9 @@ import { ProjectCard } from "./ProjectCard"
 import { projectsDataFormat } from "../../../helpers/projectsData";
 //!underTest↓↓↓
 export function Projects({data}){
-  return data.map((el)=>{
+  return data.map((el, index)=>{
     return(
-      <ProjectCard key={data.indexOf(el)} data={projectsDataFormat(el)}></ProjectCard>
+      <ProjectCard key={index} data={projectsDataFormat(el)}></ProjectCard>
     )
   })
   

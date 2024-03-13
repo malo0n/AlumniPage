@@ -2,6 +2,12 @@
 a{
   text-decoration: none;
 }
+.loader {
+  position: absolute;
+  top: 45%;
+  left: 47%;
+}
+
 .button{
   display: flex;
   align-items: center;
@@ -34,20 +40,21 @@ a{
     align-self: center;
   }
 }
-@media (max-width: 594px){
+
+@media (max-width: 482px){
   .button{
     gap: 13px;
     padding: 3.6px 11.69px;
     border-radius: 3.6px;
     &-back{
-      width: 109px;
+      width: 135px;
     }
     &-forward{
       width: 100%;
       flex-direction: row-reverse;
     }
     &_text{
-      font-size: 5px;
+      font-size: 1.7vw;
       line-height: 7px;
       letter-spacing: .1px;
     }
