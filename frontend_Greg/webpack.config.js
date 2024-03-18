@@ -15,11 +15,14 @@ module.exports = ({ mode }) => {
       filename: isProduction ? '[name].[contenthash].js' : '[name].bundle.js',
       assetModuleFilename: 'assets/[hash][ext][query]',
       clean: true,
+      publicPath: '/',
     },
     devtool: isProduction ? 'source-map' : 'eval-source-map',
     devServer: {
       static: './dist',
       hot: true,
+      port: 3000,
+      historyApiFallback: true,
     },
     plugins: [
       new MiniCssExtractPlugin({
@@ -38,17 +41,16 @@ module.exports = ({ mode }) => {
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
-            'postcss-loader',
+            'resolve-url-loader',
             'sass-loader',
           ],
         },
         {
           test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
-          type: isProduction ? 'asset/resource' : 'asset',
-        },
-        {
-          test: /\.(woff2?|eot|ttf|otf)$/i,
-          type: 'asset/resource',
+          type:'asset/resource',
+          generator: {
+            filename: 'assets/img/[hash][ext][query]'
+          }
         },
         {
           test: /\.jsx?$/,
@@ -63,15 +65,15 @@ module.exports = ({ mode }) => {
       ],
     },
     resolve: {
-      extensions: ['.js', '.jsx'], // добавляем расширения файлов для импорта
+      extensions: ['.js', '.jsx',], 
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
       alias: {
         '@components': path.resolve(__dirname, 'src/components'),
         '@hooks': path.resolve(__dirname, 'src/hooks'),
         '@helpers': path.resolve(__dirname, 'src/helpers'),
-        '@pages': path.resolve(__dirname, 'src/pages')
+        '@pages': path.resolve(__dirname, 'src/pages'),
+        '@style': path.resolve(__dirname, 'src/scss'),
     }, 
-      // указываем папку с исходными файлами и папку node_modules
     },
   };
 };
