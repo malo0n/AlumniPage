@@ -21,14 +21,14 @@ const router = createBrowserRouter([
     path: "/profiles",
     element: <Profiles/>,
     loader: async()=>{
-      <BeatLoader className='loader' color="#8000ff" speedMultiplier={0.7}/>;
+      return <BeatLoader className='loader' color="#8000ff" speedMultiplier={0.7}/>;
     }
   },
   {
     path: "/profiles/:profileId",
     element: <ProfilePage/>,
     loader: async()=>{
-      <BeatLoader className='loader' color="#8000ff" speedMultiplier={0.7}/>;
+      return <BeatLoader className='loader' color="#8000ff" speedMultiplier={0.7}/>;
     }
   },
 ]);
