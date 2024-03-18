@@ -1,7 +1,3 @@
-//* id страницы (от Алисы)
-export const testId = 5;
-//* ❤
-
 //* Недостающие данные с бд
 export const projectsTestData = [
   {

@@ -1,0 +1,78 @@
+.allProfilesCard{
+  position: relative;
+    width: 450px;
+    display: flex;
+    padding: 18px;
+    background-color:$white;
+    border-radius: 16px;
+    &_info{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      font-family: "Noto Sans";
+      &__tags{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 7px;
+      }
+      &__name{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 115%;
+        color: $black-main;
+      }
+      &__date{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 111%;
+        color: $grey;
+        margin-top: 8px;
+      }
+    }
+  }
+
+
+@media (max-width: 1030px) {
+  .allProfilesCard{
+      &__avatar{
+        align-self: center;
+      }
+    }
+  }
+@media (max-width: 482px){
+  .allProfilesCard{
+  width: 300px;
+  padding: 15px;
+  border-radius: 11px;
+  margin: 6px 0;
+  &_info{
+    width: 100%;
+    &__tags{
+      display: flex;
+      gap: 3.6px;
+      margin-bottom: 2px;
+
+    }
+    &__name{
+      font-size: 3.7vw;
+      line-height: 115%;
+    }
+    &__date{
+      font-size: 2.3vw;
+      line-height: 111%;
+      margin-top: 3.6px;
+      font-size: clamp(6px, 2.3vw, 8.6px);
+    }
+    &__btn{
+      align-self: flex-end;
+      margin-top: auto;
+      width: 100%;
+    }
+  }
+  .avatar{
+    width: 72px;
+    height: 72px;
+  }}
+}

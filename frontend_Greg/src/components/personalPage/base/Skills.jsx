@@ -1,7 +1,8 @@
 export function Skills({data}){
-  const dataFormat = data.skills.split(", ");
-  if (dataFormat!=='') {
-    return dataFormat.map((el,index)=>{
+  const skills = data.skills.split(", ");
+  console.log(skills);
+  if (skills!="") {
+    return skills.map((el,index)=>{
       return(
         <div key={index} className={`skill`}>
           {el}
@@ -11,7 +12,7 @@ export function Skills({data}){
   }
   else{
     return(
-      <span> <i>Тут пусто...</i> </span>
+      <span className="text" style={{fontFamily: "Noto Sans", fontSize: "20px"} }> <i>Тут пусто...</i> </span>
     )
   }
 }

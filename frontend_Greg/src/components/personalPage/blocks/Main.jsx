@@ -1,17 +1,15 @@
 import {ButtonBack} from "../../buttons/Buttons";
-import backArrow from "../../../assets/icons/backArrow.svg";
+import prevPageArrow from "../../../assets/icons/prevPageArrow.svg";
 import { AlumnusCard } from "../base/AlumnusCard";
 import { Projects } from "../base/Projects";
 import {profileData} from "../../../helpers/profileData";
-import {projectsData} from "../../../helpers/projectsData"; //!test
 import { projectsTestData } from "../../../helpers/testData"; //! test
 import { Skills } from "../base/Skills";
 import { skillsData } from "../../../helpers/skillsData";
 export function Main({data}){
-
   return(
-    <main className="main">
-      <ButtonBack text="Вернуться к анкетам" src={backArrow}></ButtonBack>
+    <main className="profileMain">
+      <ButtonBack text="Вернуться к анкетам" href={"/profiles"} src={prevPageArrow}></ButtonBack>
       <AlumnusCard data={profileData(data)}></AlumnusCard>
       <section className="projects">
         <h2 className="title projects__title">Проекты</h2>

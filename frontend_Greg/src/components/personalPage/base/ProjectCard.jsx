@@ -1,5 +1,5 @@
 import projectDefault from "../../../assets/icons/projectDefault.svg";
-import forwardArrow from "../../../assets/icons/forwardArrow.svg";
+import aboutArrow from "../../../assets/icons/aboutArrow.svg";
 import {ButtonForward} from "../../buttons/Buttons";
 import { projectStatus } from "../../../helpers/projectsData";
 //!underTest↓↓↓
@@ -15,7 +15,7 @@ export function ProjectCard({data}){
           <span className="projectCard__titles_role">{role}</span>
         </div>
       </div>
-      <ButtonForward text={"Перейти к проекту"} src={forwardArrow}></ButtonForward>
+      <ButtonForward text={"Перейти к проекту"} src={aboutArrow}></ButtonForward>
     </div>
   )
 }

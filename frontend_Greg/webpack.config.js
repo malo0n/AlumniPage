@@ -15,19 +15,21 @@ module.exports = ({ mode }) => {
       filename: isProduction ? '[name].[contenthash].js' : '[name].bundle.js',
       assetModuleFilename: 'assets/[hash][ext][query]',
       clean: true,
+      publicPath: '/',
     },
     devtool: isProduction ? 'source-map' : 'eval-source-map',
     devServer: {
       static: './dist',
       hot: true,
       port: 3000,
+      historyApiFallback: true,
     },
     plugins: [
       new MiniCssExtractPlugin({
         filename: isProduction ? '[name].[contenthash].css' : '[name].css',
       }),
       new HtmlWebpackPlugin({
-        template: './src/pages/index.html',
+        template: './src/index.html',
       }),
       isProduction ? null : new ReactRefreshWebpackPlugin(),
     ].filter(Boolean),
@@ -71,7 +73,6 @@ module.exports = ({ mode }) => {
         '@helpers': path.resolve(__dirname, 'src/helpers'),
         '@pages': path.resolve(__dirname, 'src/pages'),
         '@style': path.resolve(__dirname, 'src/scss'),
-        src: path.resolve(__dirname, "src"),
     }, 
     },
   };

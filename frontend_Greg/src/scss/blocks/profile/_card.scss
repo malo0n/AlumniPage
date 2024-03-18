@@ -1,4 +1,4 @@
-.card{
+.alumnusCard{
   margin-bottom: 66px;
   width: 100%;
   &__top{
@@ -33,9 +33,8 @@
       }
     }
 
-    &__avatar{
-      width: 172px;
-      height: 172px;
+    .avatar{
+      align-self: center;
     }
   }
   &__bottom{
@@ -65,7 +64,7 @@
 }
 
 @media (max-width: 1030px) {
-  .card{
+  .alumnusCard{
     width: 100%;
     &__top{
       flex-direction: column;
@@ -77,7 +76,7 @@
   }
 }
 @media (max-width: 482px){
-  .card{
+  .alumnusCard{
     margin-bottom: 30px;
     &__top{
       padding: 15px;
@@ -99,7 +98,7 @@
           margin-top: 3.6px;
         }
       }
-      &__avatar{
+      .avatar{
         width: 72px;
         height: 72px;
         margin-bottom: 14px;

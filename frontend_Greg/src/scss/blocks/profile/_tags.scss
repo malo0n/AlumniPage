@@ -1,13 +1,23 @@
 .tag{
   border-radius: 6px;
   width: fit-content;
-  padding: 6px 15px;
   color: $white;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 130%;
   letter-spacing: .3px;
+  font-weight: 600;
+  &_profile{
+    padding: 6px 15px;
+    font-size: 12px;
+    line-height: 130%;
+    font-family: "Open Sans", sans-serif;
+
+  }
+  &_allProfiles{
+    font-size: 10px;
+    line-height: 140%;
+    padding: 4.5px 13px;
+    font-family: "Noto sans", sans-serif;
+
+  }
   &-SMM{
     background-color: $turquoise;
   }
@@ -35,6 +45,6 @@
     border-radius: 3px;
     padding: 3px 7px;
     font-size: 5px;
-    line-height: 133%;
+    line-height: 143%;
   }
 }

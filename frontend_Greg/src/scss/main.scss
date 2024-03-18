@@ -9,12 +9,19 @@
 body{
   background-color:$background;
 }
+.avatar{
+  width: 152px;
+  height: 152px;
+}
 
-@import "./blocks/header";
+
+@import "./blocks/allProfiles/card";
+@import "./blocks/allProfiles/allProfiles";
+@import "./header";
 @import "./base/buttons";
-@import "./blocks/main";
-@import "./blocks/tags";
-@import "./blocks/card";
+@import "./blocks/profile/profile";
+@import "./blocks/profile/tags";
+@import "./blocks/profile/card";
 @import "./base/text";
-@import "./blocks/projects";
-@import "./blocks/skills"
+@import "./blocks/profile/projects";
+@import "./blocks/profile/skills"
