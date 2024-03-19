@@ -1,0 +1,123 @@
+.alumnusCard{
+  margin-bottom: 66px;
+  width: 100%;
+  &__top{
+    margin: 44px 0 16px 0;
+    width: 100%;
+    display: flex;
+    padding: 34px;
+    background-color:$white;
+    border-radius: 36px;
+    &_info{
+      display: flex;
+      flex-direction: column;
+      font-family: "Noto Sans";
+      &__tags{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      &__name{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 115%;
+        color: $black-main;
+      }
+      &__date{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 111%;
+        color: $black-main;
+        margin-top: 8px;
+      }
+    }
+
+    .avatar{
+      align-self: center;
+    }
+  }
+  &__bottom{
+    width: 100%;
+    display: flex;
+    padding: 34px;
+    border-radius:24px;
+    background-color: $white;
+    flex-direction: column;
+    gap: 6px;
+    align-items:start;
+    &_info{
+      font-family: "Noto Sans";
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 111%;
+      color: $grey;
+      .data-text{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 111%;
+        color: $black-main;
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1030px) {
+  .alumnusCard{
+    width: 100%;
+    &__top{
+      flex-direction: column;
+      &__avatar{
+        align-self: center;
+        margin-bottom: 32px;
+      }
+    }
+  }
+}
+@media (max-width: 482px){
+  .alumnusCard{
+    margin-bottom: 30px;
+    &__top{
+      padding: 15px;
+      border-radius: 11px;
+      margin: 20px 0 7px 0;
+      &_info{
+        &__tags{
+          display: flex;
+          gap: 3.6px;
+          margin-bottom: 7px;
+        }
+        &__name{
+          font-size: 17px;
+          line-height: 115%;
+        }
+        &__date{
+          font-size: 8px;
+          line-height: 111%;
+          margin-top: 3.6px;
+        }
+      }
+      .avatar{
+        width: 72px;
+        height: 72px;
+        margin-bottom: 14px;
+      }
+    }
+    &__bottom{
+      padding: 15px;
+      border-radius:11px;
+      gap: 2.7px;
+      &_info{
+        font-size: 8px;
+        line-height: 111%;
+        color: $grey;
+        .data-text{
+          font-size: 8px;
+          line-height: 111%;
+          margin-left: 7px;
+        }
+      }
+    }
+  }
+}

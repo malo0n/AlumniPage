@@ -1,0 +1,72 @@
+.allProfilesMain {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background;
+  gap: 20px;
+  &_cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 18px;
+    grid-template-columns: auto 1fr;
+    
+    padding: 0px 5%;
+  }
+  &_slider{
+    display: flex;
+    flex-direction: row;
+    font-family: "Noto Sans";
+    &__button{
+      font-weight: 400;
+      font-size: 18px;
+      border: none;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      margin: 0 6.5px;
+      text-align: center;
+      line-height: 133%;
+      cursor: pointer;
+      background-color: #ECEEF6;
+      color: black;
+    }
+    .selected {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+
+
+@media (max-width: 1030px) {
+  .allProfilesMain {
+    &_cards{
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+@media (max-width: 482px) {
+  .allProfilesMain {
+    padding: 20px 0px 0px 0px;
+    &_cards{
+      padding: 0px;
+      grid-gap: 3px;
+    }
+    &_slider{
+      &__button{
+        font-family: "Open Sans";
+        font-weight: 600;
+        font-size: 12px;
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+        margin: 0 5px;
+        line-height: 133%;
+      }
+    }
+  }
+}

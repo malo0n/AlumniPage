@@ -1,0 +1,93 @@
+@import "./variables";
+a{
+  text-decoration: none;
+}
+.loader {
+  position: absolute;
+  top: 45%;
+  left: 47%;
+}
+.link-forward{
+  margin-top: auto;
+  width: 100%;
+}
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 31px;
+  border: none;
+  color:$white;
+  cursor: pointer;
+  background-color: $black-main;
+  &-arrow{
+    height: 30px;
+    margin: 0 28px;
+    padding: 0 10px;
+    background-color: transparent;
+    &-inactive{
+      opacity: .4;
+      cursor: default;
+    }
+  }
+  &-back{
+    width: 251px;
+    padding: 8px 26px;
+    border-radius: 8px;
+  }
+  &-forward{
+    background-color: $black-main;
+    width: 100%;
+    flex-direction: row-reverse;
+    padding: 7px 26px;
+    border-radius: 8px;
+    .button_text{
+      line-height: 150%;
+    }
+  }
+  &_text{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .5px;
+    line-height: 133%;
+    text-align: center;
+    align-self: center;
+  }
+}
+
+@media (max-width: 482px){
+  .button{
+    gap: 13px;
+    padding: 3.6px 11.69px;
+    border-radius: 3.6px;
+    &-arrow{
+      height: 27px;
+      margin: 0 15px;
+      padding: 0 5px;
+    }
+    &-back{
+      width: 135px;
+    }
+    &-forward{
+      width: 100%;
+      flex-direction: row-reverse;
+    }
+    &-about{
+      background-color: $black-main;
+      width: 150px;
+      flex-direction: row-reverse;
+      .button_text{
+        line-height: 150%;
+      }
+    }
+    &_text{
+      font-size: 1.7vw;
+      line-height: 7px;
+      letter-spacing: .1px;
+    }
+    &_icon{
+      width: 15px;
+    }
+  }
+}
