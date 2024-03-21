@@ -59,7 +59,7 @@ export function Main({ data }) {
           <button
             key={pageNumber}
             onClick={() => handlePageClick(pageNumber)}
-            className={pageNumber === currentPage ? 'allProfilesMain_slider__button-selected' : 'allProfilesMain_slider__button'}>
+            className={pageNumber === currentPage ? 'allProfilesMain_slider__button selected' : 'allProfilesMain_slider__button'}>
             {pageNumber}
           </button>
         ))}

@@ -2,20 +2,34 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = ({ mode }) => {
   const isProduction = mode === 'production';
 
   return {
-    mode: 'development',
+    mode: 'production',
+    performance: {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000
+    },
     target: 'web',
-    entry: './src/index.js',
+    entry: {
+      index: './src/index.js',
+    },
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: isProduction ? '[name].[contenthash].js' : '[name].bundle.js',
       assetModuleFilename: 'assets/[hash][ext][query]',
       clean: true,
       publicPath: '/',
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
     },
     devtool: isProduction ? 'source-map' : 'eval-source-map',
     devServer: {
@@ -28,6 +42,7 @@ module.exports = ({ mode }) => {
       new MiniCssExtractPlugin({
         filename: isProduction ? '[name].[contenthash].css' : '[name].css',
       }),
+      
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
