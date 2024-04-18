@@ -20,7 +20,7 @@ export function ButtonBack({ variant, text, src, href }: buttonProps) {
 export function ButtonForward({ variant, text, src, href }: buttonProps) {
   return (
     <a className="mt-auto w-full" href={href}>
-      <button className="gap-[13px] py-1 px-3 rounded-[4px] flex justify-center flex-row-reverse xs:gap-5 cursor-pointer bg-blackMain text-white xs:py-2 xs:px-4 xs:rounded-md w-full">
+      <button type={variant=="registration"?"submit":"button"} className="gap-[13px] py-1 px-3 rounded-[4px] flex justify-center flex-row-reverse xs:gap-5 cursor-pointer bg-blackMain text-white xs:py-2 xs:px-4 xs:rounded-md w-full">
         <img
           className="w-[15px] xs:w-[31px] self-center"
           src={src}
