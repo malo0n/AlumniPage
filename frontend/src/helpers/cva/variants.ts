@@ -27,7 +27,7 @@ export const tagVariants = cva("text-[5px] leading-[143%] rounded-[3px] xs:round
       "Mobile": "bg-blue",
     },
     variant:{
-      "allProfiles": "xs:text-[10px] xs:leading-[150%]  font-notoSans",
+      "allProfiles": "xs:text-[10px] xs:leading-[120%]  font-notoSans",
       "profile": "xs:text-[12px] xs:leading-[130%] font-openSans",
     }
   },

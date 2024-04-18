@@ -25,7 +25,7 @@ export function ProfileCard({
         <div className=" mb-[4px] flex flex-wrap gap-1 xs:mb-2">
           <Tags variant="allProfiles" tags={tagsFormat(department)}></Tags>
         </div>
-        <span className="text-[3.7vw] leading-[115%] font-semibold xs:text-lg text-blackMain xs:leading-5">
+        <span className="text-[3.7vw] leading-[115%] font-bold xs:text-lg text-blackMain xs:leading-5">
           {name}
         </span>
         <span className=" text-[2.3vw] leading-[111%] mt-[3.6px] font-normal xs:text-sm text-grey xs:leading-[150%] xs:mt-2">

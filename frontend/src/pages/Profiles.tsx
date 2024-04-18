@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "../components/reusable/Header";
-import { Main } from "../components/allProfiles/Main";
+import { Main } from "../components/allProfiles/App";
 import { useQuery } from "react-query";
 import { fetchAllProfiles } from "../api/queries";
 import { BeatLoader } from "react-spinners";

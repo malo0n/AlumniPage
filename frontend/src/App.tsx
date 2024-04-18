@@ -8,6 +8,7 @@ import Greetings from "./pages/Greetings";
 import ErrorPage404 from "./pages/ErrorPage404";
 import Loader from "./pages/Loader";
 import Registration from "./pages/Registration";
+import ConfirmPage from "./pages/ConfirmPage";
 
 export default function App() {
   const queryClient = new QueryClient();
@@ -37,6 +38,17 @@ export default function App() {
     {
       path: "/registration",
       element: <Registration />,
+      loader: async () => {
+        return (
+          <div className="h-full w-full flex items-center justify-center">
+            <Loader />
+          </div>
+        );
+      },
+    },
+    {
+      path:"/confirm",
+      element:<ConfirmPage/>,
       loader: async () => {
         return (
           <div className="h-full w-full flex items-center justify-center">
