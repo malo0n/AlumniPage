@@ -2,14 +2,12 @@ import { SubmitHandler, useForm, Controller } from "react-hook-form";
 import { ButtonForward } from "../../components/reusable/buttons/Buttons";
 import { RegistrationForm } from "@/types/types";
 import aboutArrow from "../../assets/icons/aboutArrow.svg";
-import {
-  CustomInput,
-  CustomSelect,
-} from "../../components/reusable/inputs/Inputs";
+import { CustomInput, CustomSelect } from "../../components/reusable/inputs/Inputs";
+import { useNavigate } from "react-router-dom";
 
 export default function App() {
+  const navigate = useNavigate();
   const {
-    register,
     handleSubmit,
     control,
     formState: { errors, isValid, isSubmitting },
@@ -17,6 +15,7 @@ export default function App() {
   const onSubmit: SubmitHandler<RegistrationForm> = async (data) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log(data);
+    navigate("/confirm");
   };
   const departments = [
     { label: "Web", value: "Web" },
@@ -38,107 +37,115 @@ export default function App() {
   ];
 
   return (
-    <main className="flex flex-col items-center justify-center mt-9">
-      <h1 className="text-5xl font-bold mb-10">Регистрация</h1>
-      <form
-        className="flex flex-col gap-4 w-[400px]"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <Controller
-          control={control}
-          name="name"
-          render={({ field: { onChange, onBlur } }) => (
-            <CustomInput
-              name="name"
-              onBlur={onBlur}
-              onChange={onChange}
-              placeholder="Имя"
-            />
-          )}
-        />
-        {errors.name && (
-          <p className="text-red text-lg">{errors.name.message}</p>
-        )}
-        <Controller
-          control={control}
-          name="surname"
-          render={({ field: { onChange, onBlur } }) => (
-            <CustomInput
-              name="surname"
-              onBlur={onBlur}
-              onChange={onChange}
-              placeholder="Фамилия"
-            />
-          )}
-        />
-        <Controller
-          control={control}
-          name="department"
-          render={({ field: { onChange, value, onBlur, ref } }) => (
-            <CustomSelect
-              placeholder="Отдел"
-              onBlur={onBlur}
-              isMulti={true}
-              options={departments}
-              value={value}
-              onChange={onChange}
-              noOptionsMessage={()=> "Такого варианта нет"}
-              maxMenuHeight={200}
-
-            />
-          )}
-        />
-        <div className="w-full flex gap-2">
+    <main className='mt-9 flex flex-col items-center justify-center'>
+      <h1 className='mb-10 text-5xl font-bold'>Регистрация</h1>
+      <form className='flex w-[400px] flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
+        <div>
           <Controller
             control={control}
-            name="year_of_entry"
-            render={({ field: { onChange, value, onBlur, ref, name } }) => (
-              <CustomSelect
-                placeholder="Год вступления"
+            name='name'
+            rules={{ required: "Обязательное поле" }}
+            render={({ field: { onChange, onBlur } }) => (
+              <CustomInput
+                name='name'
                 onBlur={onBlur}
-                options={years}
-                value={value}
                 onChange={onChange}
-                noOptionsMessage={()=> "Такого варианта нет"}
-                maxMenuHeight={200}
-
+                placeholder='Имя'
+                className={errors.name ? "border-red-500 bg-red-100" : ""}
               />
             )}
           />
+          {errors.name && <p className='text-sm font-semibold text-red'>{errors.name.message}</p>}
+        </div>
+        <div>
           <Controller
             control={control}
-            name="year_of_graduation"
+            name='surname'
+            rules={{ required: "Обязательное поле" }}
+            render={({ field: { onChange, onBlur } }) => (
+              <CustomInput name='surname' onBlur={onBlur} onChange={onChange} placeholder='Фамилия' />
+            )}
+          />
+          {errors.surname && <p className='text-sm font-semibold text-red'>{errors.surname.message}</p>}
+        </div>
+        <div>
+          <Controller
+            control={control}
+            name='department'
+            rules={{ required: "Обязательное поле" }}
             render={({ field: { onChange, value, onBlur, ref } }) => (
               <CustomSelect
-                placeholder="Год выпуска"
+                placeholder='Отдел'
                 onBlur={onBlur}
-                options={years}
+                isMulti={true}
+                options={departments}
                 value={value}
                 onChange={onChange}
-                noOptionsMessage={()=> "Такого варианта нет"}
+                noOptionsMessage={() => "Такого варианта нет"}
                 maxMenuHeight={200}
               />
             )}
           />
+          {errors.department && <p className='text-sm font-semibold text-red'>{errors.department.message}</p>}
         </div>
-        <Controller
-          control={control}
-          name="email"
-          render={({ field: { onChange, onBlur } }) => (
-            <CustomInput
-              name="email"
-              onBlur={onBlur}
-              onChange={onChange}
-              placeholder="Почта"
-              
+        <div className='flex w-full gap-2'>
+          <div className='w-full'>
+            <Controller
+              control={control}
+              name='year_of_entry'
+              rules={{ required: "Обязательное поле" }}
+              render={({ field: { onChange, value, onBlur, ref, } }) => (
+                <CustomSelect
+                  placeholder='Год вступления'
+                  onBlur={onBlur}
+                  options={years}
+                  value={value}
+                  onChange={onChange}
+                  noOptionsMessage={() => "Такого варианта нет"}
+                  maxMenuHeight={200}
+                />
+              )}
             />
-          )}
-        />
+            {errors.year_of_entry && <p className='text-sm font-semibold text-red'>{errors.year_of_entry.message}</p>}
+          </div>
+          <div className='w-full'>
+            <Controller
+              control={control}
+              name='year_of_graduation'
+              rules={{ required: "Обязательное поле" }}
+              render={({ field: { onChange, value, onBlur, ref } }) => (
+                <CustomSelect
+                  placeholder='Год выпуска'
+                  onBlur={onBlur}
+                  options={[{ label: "В организации", value: "-" }, ...years]}
+                  value={value}
+                  onChange={onChange}
+                  noOptionsMessage={() => "Такого варианта нет"}
+                  maxMenuHeight={200}
+                />
+              )}
+            />
+            {errors.year_of_graduation && (
+              <p className='text-sm font-semibold text-red'>{errors.year_of_graduation.message}</p>
+            )}
+          </div>
+        </div>
+        <div>
+          <Controller
+            control={control}
+            name='email'
+            rules={{ required: "Обязательное поле" }}
+            render={({ field: { onChange, onBlur } }) => (
+              <CustomInput name='email' onBlur={onBlur} onChange={onChange} placeholder='Почта' />
+            )}
+          />
+          {errors.email && <p className='text-sm font-semibold text-red '>{errors.email.message}</p>}
+        </div>
         <ButtonForward
-          text="Продолжить"
-          variant="registration"
+          text='Продолжить'
+          variant='registration'
           src={aboutArrow}
-          href="/confirm"
+          disabled={isSubmitting}
         ></ButtonForward>
       </form>
     </main>

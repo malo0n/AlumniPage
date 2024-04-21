@@ -42,24 +42,26 @@ export interface buttonProps {
   variant?: "usual" | "registration";
   text: string;
   src: string;
-  href: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: string;
 }
 
-export interface RegistrationForm{
+export interface RegistrationForm {
   name: string;
   surname: string;
   department: Tag;
   year_of_entry: number;
   year_of_graduation: number;
   email: string;
+  triggerValidation: () => void;
 }
 
-export interface InputProps{
+export interface InputProps {
   placeholder: string;
   name: string;
   value?: string;
   values?: string[];
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
-
 }

@@ -7,12 +7,7 @@ interface GroupBase<Option> {
   readonly options: readonly Option[];
   readonly label?: string;
 }
-interface SelectProp<
-  Option = unknown,
-  IsMulti = boolean,
-  Group extends GroupBase<Option> = GroupBase<Option>
-> {
-  
+interface SelectProp<Option = unknown, IsMulti = boolean, Group extends GroupBase<Option> = GroupBase<Option>> {
   options: readonly Option[];
   isMulti?: IsMulti;
   defaultValue?: string;
@@ -27,7 +22,7 @@ interface SelectProp<
 export function CustomSelect<
   Option,
   IsMulti extends boolean = false,
-  Group extends GroupBase<Option> = GroupBase<Option>
+  Group extends GroupBase<Option> = GroupBase<Option>,
 >(props: SelectProp) {
   return (
     <Select
@@ -60,11 +55,9 @@ export function CustomSelect<
         }),
         menu: (baseStyles, state) => ({
           ...baseStyles,
-          
         }),
         menuList: (baseStyles, state) => ({
           ...baseStyles,
-          
         }),
         placeholder: (baseStyles, state) => ({
           ...baseStyles,
@@ -72,16 +65,14 @@ export function CustomSelect<
         }),
         noOptionsMessage: (baseStyles, state) => ({
           ...baseStyles,
-
-
         }),
         indicatorSeparator: (baseStyles, state) => ({
           ...baseStyles,
           display: "none",
-        })
+        }),
       }}
       {...props}
-      theme={(theme) => ({ 
+      theme={(theme) => ({
         ...theme,
         borderRadius: 6,
         border: "none",
@@ -94,7 +85,6 @@ export function CustomSelect<
           primary25: "#f2f3f7",
           primary: "#121111",
         },
-      
       })}
     />
   );
@@ -107,26 +97,21 @@ interface InputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   name: string;
   placeholder: string;
+  className?: string;
 }
 
-export const CustomInput = ({
-  name,
-  placeholder,
-  onChange,
-  onBlur,
-  icon,
-}: InputProps) => {
+export const CustomInput = ({ name, placeholder, onChange, onBlur, icon, className }: InputProps) => {
   return (
-    <div className=" flex relative ">
+    <div className=' relative flex '>
       {icon && (
         <img
           src={icon}
-          className="pointer-events-none w-4 h-4 absolute top-1/2 transform -translate-y-1/2 left-3"
-          alt="icon"
+          className='pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform'
+          alt='icon'
         ></img>
       )}
       <input
-        className="w-full border-[#cfcfd0] bg-[#f2f3f7] border-[1px] px-4 py-[13px] rounded-md focus:border-blackMain focus:outline-none placeholder:text-base focus:placeholder:opacity-40 placeholder:text-[#8b8b8b] hover:border-blackMain"
+        className={`w-full rounded-md border-[1px] border-[#cfcfd0] bg-[#f2f3f7] px-4 py-[13px] transition-all duration-100 placeholder:text-base placeholder:text-[#8b8b8b] hover:border-blackMain focus:border-blackMain focus:shadow-[0px_0px_0px_1px] focus:outline-none focus:placeholder:opacity-40 ${className}`}
         onChange={onChange}
         onBlur={onBlur}
         id={name}

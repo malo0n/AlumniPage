@@ -1,9 +1,6 @@
 import { ProfileData } from "@/types/types";
 
-export function projectsData(data: {
-  now_projects: string;
-  finish_projects: string;
-}) {
+export function projectsData(data: { now_projects: string; finish_projects: string }) {
   const projectsData = {
     now_projects: data.now_projects,
     finish_projects: data.finish_projects,
@@ -12,11 +9,7 @@ export function projectsData(data: {
 }
 //!underTest↓↓↓
 
-export function projectsDataFormat(data: {
-  status: string;
-  projectName: string;
-  role: string;
-}) {
+export function projectsDataFormat(data: { status: string; projectName: string; role: string }) {
   const formatData = {
     status: "",
     projectName: data.projectName,

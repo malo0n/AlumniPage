@@ -6,14 +6,11 @@ import { fetchAllProfiles } from "../api/queries";
 import { BeatLoader } from "react-spinners";
 import { AllProfilesData } from "../types/types";
 function Profiles(): JSX.Element {
-  const { data, isLoading, isError } = useQuery<AllProfilesData, Error>(
-    "Profiles",
-    () => fetchAllProfiles()
-  );
+  const { data, isLoading, isError } = useQuery<AllProfilesData, Error>("Profiles", () => fetchAllProfiles());
   if (isLoading)
     return (
-      <div className="absolute top-[50%] left-[50%]">
-        <BeatLoader className="loader" color="#8000ff" speedMultiplier={0.7} />
+      <div className='absolute left-[50%] top-[50%]'>
+        <BeatLoader className='loader' color='#8000ff' speedMultiplier={0.7} />
       </div>
     );
   if (isError) return <>Error</>;

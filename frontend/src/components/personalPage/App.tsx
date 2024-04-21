@@ -9,26 +9,26 @@ import { ProfileData } from "../../types/types";
 
 export function Main({ data }: { data: ProfileData }) {
   return (
-    <main className="flex flex-col items-start justify-center my-[17px] xs:my-[38px] mx-auto w-full lg:w-[95%] px-[25px] xs:px-11 bg-background">
+    <main className='mx-auto my-[17px] flex w-full flex-col items-start justify-center bg-background px-[25px] xs:my-[38px] xs:px-11 lg:w-[95%]'>
       <ButtonBack
-        text="Вернуться к анкетам"
-        href={"/profiles"}
+        text='Вернуться к анкетам'
+        onClick={() => {
+          window.history.back();
+        }}
         src={prevPageArrow}
       ></ButtonBack>
       <AlumnusCard data={data}></AlumnusCard>
-      <section className="w-full mb-[30px] xs:mb-[66px] flex flex-col items-center">
-        <h2 className="mb-[14px] xs:mb-[30px] text-[17px] self-start font-notoSans font-bold xs:text-3xl leading-[110%] text-black">
+      <section className='mb-[30px] flex w-full flex-col items-center xs:mb-[66px]'>
+        <h2 className='mb-[14px] self-start font-notoSans text-[17px] font-bold leading-[110%] text-black xs:mb-[30px] xs:text-3xl'>
           Проекты
         </h2>
-        <div className="flex flex-col lg:flex-row items-center w-full flex-wrap mx-[25px] xs:mx-0 gap-[14px] xs:gap-[30px]">
+        <div className='mx-[25px] flex w-full flex-col flex-wrap items-center gap-[14px] xs:mx-0 xs:gap-[30px] lg:flex-row'>
           <Projects data={projectsTestData}></Projects>
         </div>
       </section>
-      <section className="w-full">
-        <h2 className="font-notoSans font-bold text-[17px] xs:text-3xl leading-[110%] text-black">
-          Скиллы
-        </h2>
-        <div className="mt-[14px] xs:mt-[30px] flex w-full flex-wrap gap-[7px] xs:gap-4">
+      <section className='w-full'>
+        <h2 className='font-notoSans text-[17px] font-bold leading-[110%] text-black xs:text-3xl'>Скиллы</h2>
+        <div className='mt-[14px] flex w-full flex-wrap gap-[7px] xs:mt-[30px] xs:gap-4'>
           <Skills data={data}></Skills>
         </div>
       </section>

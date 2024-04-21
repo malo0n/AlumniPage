@@ -5,13 +5,11 @@ export default function ErrorPage404() {
   console.error(error);
 
   return (
-    <div className="flex justify-center items-center flex-col h-screen w-full font-montserrat text-black-main">
-      <h1 className="xs:text-5xl text-base font-bold font-montserrat">
-        Oops! Page not found...
-      </h1>
+    <div className='text-black-main flex h-screen w-full flex-col items-center justify-center font-montserrat'>
+      <h1 className='font-montserrat text-base font-bold xs:text-5xl'>Oops! Page not found...</h1>
       <Link
-        to="/profiles"
-        className="font-montserrat text-gray-600 font-bold xs:text-lg text-xs my-5 hover:text-opacity-45 transition duration-100 ease-in-out "
+        to='/profiles'
+        className='my-5 font-montserrat text-xs font-bold text-gray-600 transition duration-100 ease-in-out hover:text-opacity-45 xs:text-lg '
       >
         Go back to profiles
       </Link>

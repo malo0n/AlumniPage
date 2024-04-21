@@ -3,7 +3,7 @@ import { ProfileData } from "@/types/types";
 export function Skills({ data }: { data: ProfileData }) {
   if (data.skills == "" || data.skills == null)
     return (
-      <span className="font-notoSans font-medium text-[8px] xs:text-lg leading-[100%] text-grey">
+      <span className='font-notoSans text-[8px] font-medium leading-[100%] text-grey xs:text-lg'>
         {" "}
         <i>Тут пусто...</i>{" "}
       </span>
@@ -14,7 +14,7 @@ export function Skills({ data }: { data: ProfileData }) {
       return (
         <div
           key={index}
-          className="rounded-[3px] xs:rounded-[7px] py-0 xs:py-[2px] px-[7px] xs:px-[19px] w-fit h-auto bg-white text-center font-montserrat font-normal leading-[150%] text-[7px] xs:text-base tracking-[-0.02em] text-blackMain"
+          className='h-auto w-fit rounded-[3px] bg-white px-[7px] py-0 text-center font-montserrat text-[7px] font-normal leading-[150%] tracking-[-0.02em] text-blackMain xs:rounded-[7px] xs:px-[19px] xs:py-[2px] xs:text-base'
         >
           {el}
         </div>

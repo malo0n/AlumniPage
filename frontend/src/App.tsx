@@ -11,14 +11,21 @@ import Registration from "./pages/Registration";
 import ConfirmPage from "./pages/ConfirmPage";
 
 export default function App() {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 0,
+        cacheTime: 0,
+      },
+    },
+  });
   const router = createBrowserRouter([
     {
       path: "*",
       element: <ErrorPage404 />,
       loader: async () => {
         return (
-          <div className="h-full w-full flex items-center justify-center">
+          <div className='flex h-full w-full items-center justify-center'>
             <Loader />
           </div>
         );
@@ -29,7 +36,7 @@ export default function App() {
       element: <Greetings />,
       loader: async () => {
         return (
-          <div className="h-full w-full flex items-center justify-center">
+          <div className='flex h-full w-full items-center justify-center'>
             <Loader />
           </div>
         );
@@ -40,18 +47,18 @@ export default function App() {
       element: <Registration />,
       loader: async () => {
         return (
-          <div className="h-full w-full flex items-center justify-center">
+          <div className='flex h-full w-full items-center justify-center'>
             <Loader />
           </div>
         );
       },
     },
     {
-      path:"/confirm",
-      element:<ConfirmPage/>,
+      path: "/confirm",
+      element: <ConfirmPage />,
       loader: async () => {
         return (
-          <div className="h-full w-full flex items-center justify-center">
+          <div className='flex h-full w-full items-center justify-center'>
             <Loader />
           </div>
         );
@@ -62,7 +69,7 @@ export default function App() {
       element: <Profiles />,
       loader: async () => {
         return (
-          <div className="h-full w-full flex items-center justify-center">
+          <div className='flex h-full w-full items-center justify-center'>
             <Loader />
           </div>
         );
@@ -73,7 +80,7 @@ export default function App() {
       element: <ProfilePage />,
       loader: async () => {
         return (
-          <div className="h-full w-full flex items-center justify-center">
+          <div className='flex h-full w-full items-center justify-center'>
             <Loader />
           </div>
         );
