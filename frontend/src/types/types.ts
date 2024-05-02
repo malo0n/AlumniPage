@@ -1,10 +1,10 @@
-export interface ProfileData {
+export type ProfileData = {
   id: number;
   photo: string | null;
   name: string;
   department: string;
-  year_of_entry: number | null;
-  year_of_graduation: number | null;
+  year_of_entry?: number;
+  year_of_graduation?: number;
   date_of_birth?: string;
   work?: string;
   university?: string;
@@ -34,10 +34,6 @@ export interface TagsProps {
   variant: "allProfiles" | "profile";
   tags: Tag[];
 }
-export interface AvatarProps {
-  photo: string | null;
-}
-
 export interface buttonProps {
   variant?: "usual" | "registration";
   text: string;

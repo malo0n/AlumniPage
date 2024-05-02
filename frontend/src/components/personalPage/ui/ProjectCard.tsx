@@ -1,10 +1,12 @@
 import projectDefault from "../../../assets/icons/projectDefault.svg";
 import aboutArrow from "../../../assets/icons/aboutArrow.svg";
-import { ButtonForward } from "../../reusable/buttons/Buttons";
+import { ButtonForward } from "../../shared/buttons/Buttons";
 import { projectStatus } from "../../../helpers/data/projectsData";
 //!underTest↓↓↓
-export function ProjectCard({ data }: { data: { status: string; projectName: string; role: string } }) {
-  const { status, projectName, role } = data;
+
+type Props = { status: string; projectName: string; role: string }
+export function ProjectCard(props:Props) {
+  const { status, projectName, role } = props;
   return (
     <div className='flex h-auto w-full flex-col rounded-[11px] bg-white px-4 py-3 xs:rounded-3xl xs:px-[36px] xs:py-[27px] lg:w-[48.2%] '>
       <div className='mb-[14px] flex items-center xs:mb-[30px]'>

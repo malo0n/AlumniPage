@@ -1,7 +1,9 @@
-import { ProfileData } from "@/types/types";
+type Props = {
+  skills?: string;
+}
 
-export function Skills({ data }: { data: ProfileData }) {
-  if (data.skills == "" || data.skills == null)
+export function Skills(props:Props) {
+  if (props.skills === "" || props.skills === undefined)
     return (
       <span className='font-notoSans text-[8px] font-medium leading-[100%] text-grey xs:text-lg'>
         {" "}
@@ -9,7 +11,7 @@ export function Skills({ data }: { data: ProfileData }) {
       </span>
     );
   else {
-    const skills: string[] = data.skills.split(", ");
+    const skills: string[] = props.skills.split(", ");
     return skills.map((el: string, index: number) => {
       return (
         <div

@@ -1,5 +1,5 @@
-import { Header } from "../components/reusable/Header";
-import { ButtonForward } from "../components/reusable/buttons/Buttons";
+import { Header } from "../components/shared/Header";
+import { ButtonForward } from "../components/shared/buttons/Buttons";
 import aboutArrow from "../assets/icons/aboutArrow.svg";
 import { useNavigate } from "react-router-dom";
 export default function Greetings() {

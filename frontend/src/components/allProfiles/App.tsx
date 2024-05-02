@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Arrow } from "../reusable/buttons/Buttons";
+import { Arrow } from "../shared/buttons/Buttons";
 import backArrow from "../../assets/icons/backArrow.svg";
 import forwardArrow from "../../assets/icons/forwardArrow.svg";
 import { ProfileCard } from "./ui/ProfileCard";
 import { allProfilesData } from "../../helpers/data/allProfilesData";
 import { AllProfilesData } from "../../types/types";
 import { ProfileData } from "../../types/types";
-export function Main({ data }: { data: AllProfilesData }) {
+type Props = {
+  data: AllProfilesData;
+}
+export function Main(props: Props) {
+  const data = props.data;
   const itemsPerPage = 14;
   const totalPages: number = Math.ceil(data.length / itemsPerPage);
 

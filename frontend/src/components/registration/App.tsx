@@ -1,8 +1,8 @@
 import { SubmitHandler, useForm, Controller } from "react-hook-form";
-import { ButtonForward } from "../../components/reusable/buttons/Buttons";
+import { ButtonForward } from "../../components/shared/buttons/Buttons";
 import { RegistrationForm } from "@/types/types";
 import aboutArrow from "../../assets/icons/aboutArrow.svg";
-import { CustomInput, CustomSelect } from "../../components/reusable/inputs/Inputs";
+import { CustomInput, CustomSelect } from "../../components/shared/inputs/Inputs";
 import { useNavigate } from "react-router-dom";
 
 export default function App() {
@@ -145,7 +145,7 @@ export default function App() {
           text='Продолжить'
           variant='registration'
           src={aboutArrow}
-          disabled={isSubmitting}
+          disabled={isSubmitting || !isValid}
         ></ButtonForward>
       </form>
     </main>

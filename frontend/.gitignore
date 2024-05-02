@@ -2,3 +2,8 @@ node_modules
 package-lock.json
 dist
 README.md
+.dockerignore
+components.json
+Dockerfile
+compose.yaml
+README.Docker.node_modules

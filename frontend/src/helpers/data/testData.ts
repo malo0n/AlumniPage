@@ -1,5 +1,5 @@
 //* Недостающие данные с бд
-export const projectsTestData = [
+export const projectsTestData =[
   {
     status: "active",
     projectName: "Termeet",
@@ -20,5 +20,6 @@ export const projectsTestData = [
     projectName: "Страница выпускников",
     role: "back-end разработчик",
   },
-];
+]
+;
 //* ❤

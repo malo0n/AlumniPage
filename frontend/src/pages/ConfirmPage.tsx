@@ -1,5 +1,5 @@
-import { Header } from "../components/reusable/Header";
-import App from "../components/ConfirmPage/App";
+import { Header } from "../components/shared/Header";
+import App from "../components/confirmPage/App";
 
 export default function ConfirmPage() {
   return (
