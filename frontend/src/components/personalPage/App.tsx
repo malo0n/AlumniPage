@@ -6,8 +6,6 @@ import { projectsTestData } from "../../helpers/data/testData"; //! test
 import { Skills } from "./ui/Skills";
 import { ProfileData } from "../../types/types";
 import { useNavigate } from "react-router-dom";
-import { replaceAt } from "react-query/types/core/utils";
-import { Replace } from "lucide-react";
 export function App( props :  ProfileData ) {
   const navigate = useNavigate();
   return (

@@ -1,7 +1,6 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import ProfilePage from "./pages/ProfilePage";
 import Profiles from "./pages/Profiles";
 import Greetings from "./pages/Greetings";

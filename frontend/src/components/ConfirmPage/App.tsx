@@ -21,16 +21,16 @@ export default function App() {
   return (
     <main className='mt-24 flex w-[40%] flex-col items-center justify-center self-center'>
       <h1 className='mb-24 text-5xl font-bold'>Подтверждение</h1>
-      {/* <span className='mb-7 text-2xl'>Введите код из письма</span> */}
       <form className='flex w-full flex-col gap-8'>
         <Controller
           control={control}
           name='code'
+          rules={{ required: true }}
           render={({ field: { onChange, onBlur } }) => (
             <CustomInput name='code' onBlur={onBlur} onChange={onChange} placeholder='Код' />
           )}
         />
-        <ButtonForward onClick={handleSubmit(onSubmit)} variant='registration' text='Завершить' src={aboutArrow} />
+        <ButtonForward disabled={!isValid || isSubmitting} onClick={handleSubmit(onSubmit)} variant='registration' text='Завершить' src={aboutArrow} />
       </form>
     </main>
   );

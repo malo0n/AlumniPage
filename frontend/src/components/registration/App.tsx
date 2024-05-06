@@ -44,7 +44,7 @@ export default function App() {
           <Controller
             control={control}
             name='name'
-            rules={{ required: "Обязательное поле" }}
+            rules={{ required: true }}
             render={({ field: { onChange, onBlur } }) => (
               <CustomInput
                 name='name'
@@ -55,24 +55,22 @@ export default function App() {
               />
             )}
           />
-          {errors.name && <p className='text-sm font-semibold text-red'>{errors.name.message}</p>}
         </div>
         <div>
           <Controller
             control={control}
             name='surname'
-            rules={{ required: "Обязательное поле" }}
+            rules={{ required: true }}
             render={({ field: { onChange, onBlur } }) => (
               <CustomInput name='surname' onBlur={onBlur} onChange={onChange} placeholder='Фамилия' />
             )}
           />
-          {errors.surname && <p className='text-sm font-semibold text-red'>{errors.surname.message}</p>}
         </div>
         <div>
           <Controller
             control={control}
             name='department'
-            rules={{ required: "Обязательное поле" }}
+            rules={{ required: true}}
             render={({ field: { onChange, value, onBlur, ref } }) => (
               <CustomSelect
                 placeholder='Отдел'
@@ -86,14 +84,13 @@ export default function App() {
               />
             )}
           />
-          {errors.department && <p className='text-sm font-semibold text-red'>{errors.department.message}</p>}
         </div>
         <div className='flex w-full gap-2'>
           <div className='w-full'>
             <Controller
               control={control}
               name='year_of_entry'
-              rules={{ required: "Обязательное поле" }}
+              rules={{ required: true}}
               render={({ field: { onChange, value, onBlur, ref, } }) => (
                 <CustomSelect
                   placeholder='Год вступления'
@@ -106,13 +103,12 @@ export default function App() {
                 />
               )}
             />
-            {errors.year_of_entry && <p className='text-sm font-semibold text-red'>{errors.year_of_entry.message}</p>}
           </div>
           <div className='w-full'>
             <Controller
               control={control}
               name='year_of_graduation'
-              rules={{ required: "Обязательное поле" }}
+              rules={{ required: true }}
               render={({ field: { onChange, value, onBlur, ref } }) => (
                 <CustomSelect
                   placeholder='Год выпуска'
@@ -125,16 +121,13 @@ export default function App() {
                 />
               )}
             />
-            {errors.year_of_graduation && (
-              <p className='text-sm font-semibold text-red'>{errors.year_of_graduation.message}</p>
-            )}
           </div>
         </div>
         <div>
           <Controller
             control={control}
             name='email'
-            rules={{ required: "Обязательное поле" }}
+            rules={{pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, required: true}}
             render={({ field: { onChange, onBlur } }) => (
               <CustomInput name='email' onBlur={onBlur} onChange={onChange} placeholder='Почта' />
             )}

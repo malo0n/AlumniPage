@@ -21,7 +21,7 @@ export function ButtonForward(props: buttonProps) {
       disabled={disabled}
       onClick={onClick}
       type={variant === "registration" ? "submit" : "button"}
-      className={`${disabled ? "opacity-25 cursor-not-allowed" : ""} mt-auto flex w-full cursor-pointer flex-row-reverse justify-center gap-[13px] rounded-[4px] bg-blackMain px-3 py-1 text-white xs:gap-5 xs:rounded-md xs:px-4 xs:py-2`}
+      className={`${disabled ? "opacity-25 cursor-not-allowed" : "cursor-pointer"} mt-auto flex transition-all w-full flex-row-reverse justify-center gap-[13px] rounded-[4px] bg-blackMain px-3 py-1 text-white xs:gap-5 xs:rounded-md xs:px-4 xs:py-2`}
     >
       <img className='w-[15px] self-center xs:w-[31px]' src={src} alt='icon' />
       <span className={textVariant({ variant })}>{text}</span>
